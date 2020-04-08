@@ -5,8 +5,7 @@ Creates .env file from a template and places it in the correct directory
 
 Requirements
 ------------
-
-None
+When you use this role, it expects a file in the template folder called `dot_env.j2`, you can customize the name of this template as described in the role variables below.
 
 Role Variables
 --------------
