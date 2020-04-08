@@ -1,0 +1,20 @@
+---
+
+- name: Confirm .env containing directory exists
+  file:
+    path: "{{ dot_env_directory }}"
+    state: directory
+    group: "{{ dot_env_directory_group }}"
+    owner: "{{ dot_env_directory_owner }}"
+    mode: "{{ dot_env_directory_mode }}"
+  become: yes
+  when: dot_env_confirm_directory_exists is yes
+
+- name: Create .env file
+  template:
+    src: "{{ dot_env_file_template }}"
+    dest: "{{ dot_env_directory }}/.env"
+    owner: "{{ dot_env_file_owner }}"
+    group: "{{ dot_env_file_group }}"
+    mode: "{{ dot_env_file_mode }}"
+  become: yes
