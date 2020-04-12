@@ -8,7 +8,7 @@
     owner: "{{ dot_env_directory_owner }}"
     mode: "{{ dot_env_directory_mode }}"
   become: yes
-  when: dot_env_confirm_directory_exists is yes
+  when: dot_env_confirm_directory_exists == "yes"
 
 - name: Create .env file
   template:
